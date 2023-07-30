@@ -105,11 +105,19 @@ main {
   overflow: hidden;
   background-color: var(--white);
 }
+
 .card img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
+
+  filter: sepia(30);
+  transition: all 1s ease-out 300ms;
+}
+.card img:hover {
+  filter: sepia(0);
+  transform: scale(1.03);
 }
 .card figcaption {
   padding: 2.2rem;
@@ -141,4 +149,34 @@ footer {
   font-size: 1.6rem;
   color: var(--grey_900);
   text-align: center;
+}
+
+header {
+  --startY: -100%;
+  animation: move 500ms ease-out 0ms reverse;
+}
+footer {
+  --startY: 100%;
+  animation: move 500ms ease-out 0ms reverse;
+}
+
+@keyframes move {
+  100% {
+    transform: translateY(var(--startY));
+  }
+}
+
+.card {
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: appear 500ms ease-in-out 300ms backwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
