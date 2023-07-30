@@ -105,3 +105,12 @@ main {
   height: 19.4rem;
   object-fit: cover;
 }
+
+
+
+footer {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--grey_900);
+  text-align: center;
+}
